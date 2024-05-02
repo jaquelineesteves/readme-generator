@@ -1,0 +1,27 @@
+{
+  "name": "readme-generator",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start":"npm init -y",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jaquelineesteves/readme-generator.git"
+  },
+  "keywords": [
+    "readme",
+    "generator"
+  ],
+  "author": "Jaqueline Farias de Souza Esteves",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/jaquelineesteves/readme-generator/issues"
+  },
+  "homepage": "https://github.com/jaquelineesteves/readme-generator#readme",
+  "dependencies": {
+    "inquirer": "^8.2.4"
+  }
+}
