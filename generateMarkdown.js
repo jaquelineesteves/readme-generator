@@ -1,30 +1,30 @@
-// TODO: Create a function that returns a license badge based on which license is passed in
-// If there is no license, return an empty string
-function renderLicenseBadge(license) {
-}
-
-console.log(renderLicenseBadge('MIT'));
-// TODO: Create a function that returns the license link
-// If there is no license, return an empty string
-
 
 function renderLicenseLink(license) {
+if(license !== 'None'){
+  let licenseChosen = license
+  let licensenospace = licenseChosen
+  .split(" ")
+  .join("");
 
-// 'MIT'  badge = 'https://img.shields.io/badge/License-MIT-yellow.svg'
-// 'APACHE 2.0'  badge = 'https://img.shields.io/badge/License-Apache_2.0-blue.svg'
-// 'GPL 3.0' badge = 'https://img.shields.io/badge/License-GPLv3-blue.svg'
-// 'BSD 3'  badge = 'https://img.shields.io/badge/License-BSD_3--Clause-blue.svg'
+  return `![${license}](https://img.shields.io/static/v1?label=License&message=${licensenospace}&color=blue)`
 }
-// TODO: Create a function that returns the license section of README
-// If there is no license, return an empty string
+ else return ''
 
-function renderLicenseSection(license) {}
+}
+
+function renderLicenseSection(license) {
+  if(license !== 'None'){
+
+    return `This project is licensed under ${license} license`
+  }
+   else return ''
+}
 
 // TODO: Create a function to generate markdown for README
 function generateMarkdown(data) {
   return `
   # ${data.title}
-  ![${data.license}](${renderLicenseBadge(data.license)})
+  ${renderLicenseLink(data.license)}
   
   ## Description 
    ${data.description}
@@ -33,7 +33,6 @@ function generateMarkdown(data) {
   * [Installation](#installation)
   * [Usage](#usage)
   * [License](#license)
-  * [Contributing](#contributing)
   * [Tests](#tests)
   * [Questions](#questions)
   
@@ -50,10 +49,8 @@ function generateMarkdown(data) {
 
 
   ## License 
-  ${data.license}  
+  ${renderLicenseSection(data.license)}  
 
-  ## Contributing  
-  ${data.contributing}
 
   ## Tests
   To run tests, run the following command:
